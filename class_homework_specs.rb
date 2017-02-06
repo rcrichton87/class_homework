@@ -1,7 +1,7 @@
 require ('minitest/autorun')
 require_relative('./class_homework')
 
-class TestBankAccount < MiniTest::Test
+class TestCodeClanStudent < MiniTest::Test
 
   def test_student_name
     student = CodeClanStudent.new("Ross", "Cohort 10")
@@ -25,4 +25,9 @@ class TestBankAccount < MiniTest::Test
     assert_equal("Cohort 8", student.cohort)
   end
 
+  def test_talk
+    student = CodeClanStudent.new("Ross", "Cohort 10")
+    assert_equal("I can talk!", student.talk)
+  end
+  
 end
