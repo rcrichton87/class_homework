@@ -239,4 +239,34 @@ class TestLibrary < MiniTest::Test
     assert_equal(expected, actual)
   end
 
+  def test_change_rental_details
+    library = Library.new ( 
+      [
+        { 
+          title: "lord_of_the_rings",
+          rental_details: { 
+           student_name: "Jeff", 
+           date: "01/12/16"
+          }
+        },
+        {
+          title: "the_gunslinger",
+          rental_details: {
+            student_name: "Ross",
+            date: "07/02/17"
+          }
+        }
+      ]
+    )
+
+    expected = {
+      student_name: "David",
+      date: "11/04/17"
+    }
+
+    actual = library.change_rental_details("the_gunslinger", "David", "11/04/17")
+
+    assert_equal(expected, actual)
+  end
+
 end

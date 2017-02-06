@@ -110,4 +110,16 @@ class Library
     return @all_books
   end
 
+  def change_rental_details(book_to_change, new_name, new_date)
+    for book in @all_books
+      if book[:title] == book_to_change
+        book[:rental_details][:student_name] = new_name
+        book[:rental_details][:date] = new_date
+        return book[:rental_details]
+      end
+    end
+    return "Not Found"
+
+  end
+
 end
