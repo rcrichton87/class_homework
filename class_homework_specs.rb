@@ -64,6 +64,11 @@ class TestSportsTeam < MiniTest::Test
     assert_equal("Miss Fortune", team.coach)
   end
 
+  def test_add_new_player
+    team = SportsTeam.new("Handegg Handlers", ["Hack Enslash", "Mad Donna"], "Amanda Hugandkiss")
+    team.add_new_player("Miss Fortune")
+    assert_equal(["Hack Enslash", "Mad Donna", "Miss Fortune"], team.players)
+  end
 end
 
 
