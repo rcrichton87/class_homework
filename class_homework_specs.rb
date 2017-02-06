@@ -190,4 +190,53 @@ class TestLibrary < MiniTest::Test
     actual = library.find_book_rental_details("the_gunslinger")
     assert_equal(expected, actual)
   end
+
+  def test_add_book
+    library = Library.new ( 
+      [
+        { 
+          title: "lord_of_the_rings",
+          rental_details: { 
+           student_name: "Jeff", 
+           date: "01/12/16"
+          }
+        },
+        {
+          title: "the_gunslinger",
+          rental_details: {
+            student_name: "Ross",
+            date: "07/02/17"
+          }
+        }
+      ]
+    )
+
+    expected = [
+        { 
+          title: "lord_of_the_rings",
+          rental_details: { 
+           student_name: "Jeff", 
+           date: "01/12/16"
+          }
+        },
+        {
+          title: "the_gunslinger",
+          rental_details: {
+            student_name: "Ross",
+            date: "07/02/17"
+          }
+        },
+        {
+          title: "orcs!",
+          rental_details: {
+            student_name: "",
+            date: ""
+          }
+        }
+      ]
+    actual = library.add_book("orcs!")
+
+    assert_equal(expected, actual)
+  end
+
 end

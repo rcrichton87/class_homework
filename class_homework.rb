@@ -98,4 +98,16 @@ class Library
     return "Not Found"
   end
 
+  def add_book(book_to_add)
+    new_book = { 
+      title: book_to_add,
+      rental_details: {
+        student_name: "",
+        date: ""
+        }
+      }
+    @all_books.push(new_book)
+    return @all_books
+  end
+
 end
