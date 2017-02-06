@@ -80,4 +80,14 @@ class Library
     return @all_books
   end
 
+def find_book(book_to_find)
+  for book in @all_books
+    if book[:title] == book_to_find
+      return book
+    end
+    return "Not Found"
+  end
+
+end
+
 end
