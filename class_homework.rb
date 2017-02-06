@@ -1,8 +1,12 @@
 class CodeClanStudent
 
   def initialize(student_name, cohort)
-    @name = student_name
+    @student_name = student_name
     @cohort = cohort
   end
+
+  def student_name
+    return @student_name
+  end 
 
 end
