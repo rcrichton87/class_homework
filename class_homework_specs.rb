@@ -8,4 +8,9 @@ class TestBankAccount < MiniTest::Test
     assert_equal("Ross", student.student_name)
   end
 
+  def test_cohort
+    student = CodeClanStudent.new("Ross", "Cohort 10")
+    assert_equal("Cohort 10", student.cohort)
+  end
+  
 end

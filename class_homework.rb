@@ -9,4 +9,8 @@ class CodeClanStudent
     return @student_name
   end 
 
+  def cohort
+    return @cohort
+  end
+
 end
