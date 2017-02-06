@@ -50,4 +50,8 @@ class SportsTeam
     return @players.push(new_player)
   end
 
+  def search_for_player(player)
+    return @players.include?(player)
+  end
+
 end
