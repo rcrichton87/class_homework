@@ -41,46 +41,94 @@ require_relative('./class_homework')
 
 #Part B
 
-class TestSportsTeam < MiniTest::Test
+# class TestSportsTeam < MiniTest::Test
 
-  def test_team_name
-    team = SportsTeam.new("Handegg Handlers", ["Hack Enslash", "Mad Donna"], "Amanda Hugandkiss")
-    assert_equal("Handegg Handlers", team.team_name)
-  end
+#   def test_team_name
+#     team = SportsTeam.new("Handegg Handlers", ["Hack Enslash", "Mad Donna"], "Amanda Hugandkiss")
+#     assert_equal("Handegg Handlers", team.team_name)
+#   end
 
-  def test_players
-    team = SportsTeam.new("Handegg Handlers", ["Hack Enslash", "Mad Donna"], "Amanda Hugandkiss")
-    assert_equal(["Hack Enslash", "Mad Donna"], team.players)
-  end
+#   def test_players
+#     team = SportsTeam.new("Handegg Handlers", ["Hack Enslash", "Mad Donna"], "Amanda Hugandkiss")
+#     assert_equal(["Hack Enslash", "Mad Donna"], team.players)
+#   end
 
-  def test_coach
-    team = SportsTeam.new("Handegg Handlers", ["Hack Enslash", "Mad Donna"], "Amanda Hugandkiss")
-    assert_equal("Amanda Hugandkiss", team.coach)
-  end
+#   def test_coach
+#     team = SportsTeam.new("Handegg Handlers", ["Hack Enslash", "Mad Donna"], "Amanda Hugandkiss")
+#     assert_equal("Amanda Hugandkiss", team.coach)
+#   end
 
-  def test_update_coach
-    team = SportsTeam.new("Handegg Handlers", ["Hack Enslash", "Mad Donna"], "Amanda Hugandkiss")
-    team.coach = "Miss Fortune"
-    assert_equal("Miss Fortune", team.coach)
-  end
+#   def test_update_coach
+#     team = SportsTeam.new("Handegg Handlers", ["Hack Enslash", "Mad Donna"], "Amanda Hugandkiss")
+#     team.coach = "Miss Fortune"
+#     assert_equal("Miss Fortune", team.coach)
+#   end
 
-  def test_add_new_player
-    team = SportsTeam.new("Handegg Handlers", ["Hack Enslash", "Mad Donna"], "Amanda Hugandkiss")
-    team.add_new_player("Miss Fortune")
-    assert_equal(["Hack Enslash", "Mad Donna", "Miss Fortune"], team.players)
-  end
+#   def test_add_new_player
+#     team = SportsTeam.new("Handegg Handlers", ["Hack Enslash", "Mad Donna"], "Amanda Hugandkiss")
+#     team.add_new_player("Miss Fortune")
+#     assert_equal(["Hack Enslash", "Mad Donna", "Miss Fortune"], team.players)
+#   end
 
-  def test_search_for_player
-    team = SportsTeam.new("Handegg Handlers", ["Hack Enslash", "Mad Donna"], "Amanda Hugandkiss")
-    assert_equal(true, team.search_for_player("Hack Enslash"))
-  end
+#   def test_search_for_player
+#     team = SportsTeam.new("Handegg Handlers", ["Hack Enslash", "Mad Donna"], "Amanda Hugandkiss")
+#     assert_equal(true, team.search_for_player("Hack Enslash"))
+#   end
 
-  def test_update_points
-    team = SportsTeam.new("Handegg Handlers", ["Hack Enslash", "Mad Donna"], "Amanda Hugandkiss")
-    assert_equal(3, team.update_points("win"))
+#   def test_update_points
+#     team = SportsTeam.new("Handegg Handlers", ["Hack Enslash", "Mad Donna"], "Amanda Hugandkiss")
+#     assert_equal(3, team.update_points("win"))
+#   end
+
+# end
+
+#Extension
+
+class TestLibrary < MiniTest::Test
+
+  def test_list_all_books
+    library = Library.new ( 
+      [
+        { 
+          title: "lord_of_the_rings",
+          rental_details: { 
+           student_name: "Jeff", 
+           date: "01/12/16"
+          }
+        },
+        {
+          title: "the_gunslinger",
+          rental_details: {
+            student_name: "Ross",
+            date: "07/02/17"
+          }
+        }
+      ]
+    )
+
+    expected = [
+        { 
+          title: "lord_of_the_rings",
+          rental_details: { 
+           student_name: "Jeff", 
+           date: "01/12/16"
+          }
+        },
+        {
+          title: "the_gunslinger",
+          rental_details: {
+            student_name: "Ross",
+            date: "07/02/17"
+          }
+        }
+      ]
+
+    actual = library.list_all_books
+
+    assert_equal(expected, actual)
+
   end
 
 end
-
 
 
