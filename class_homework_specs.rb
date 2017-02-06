@@ -75,6 +75,11 @@ class TestSportsTeam < MiniTest::Test
     assert_equal(true, team.search_for_player("Hack Enslash"))
   end
 
+  def test_update_points
+    team = SportsTeam.new("Handegg Handlers", ["Hack Enslash", "Mad Donna"], "Amanda Hugandkiss")
+    assert_equal(3, team.update_points("win"))
+  end
+
 end
 
 
